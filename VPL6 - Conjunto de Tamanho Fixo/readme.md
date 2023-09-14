@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Na aula 04, nós implementamos um TAD (Tipo Abstrato de Dados) correspondente a um conjunto de inteiros. Nós discutimos algumas implementações diferentes, e, em uma delas, consideramos a possibilidade de usar os próprios elementos como seus índices. Por exemplo, o elemento 0 seria mapeado para o índice 0, o elemento 1 para o índice 1, o 2 para o índice 2, e assim por diante. Um problema desta solução é o uso de memória, já que, caso fosse necessário inserir valores muito grandes, o vetor interno precisaria crescer para um tamanho muito grande.
+Na aula 04, nós implementamos um TAD (Tipo Abstrato de Dados) correspondente a um conjunto de inteiros. Nós discutimos algumas implementações diferentes, e, em uma delas, consideramos a possibilidade de usar os próprios elementos como seus índices. Por exemplo, o elemento 0 seria mapeado para o índice 0, o elemento 1 para o índice 1, o 2 para o índice 2, e assim por diante. Um problema desta solução é o uso de memória, já que, caso fosse necessário inserir valores muito grandes, o vetor interno precisaria crescer para um tamanho muito grande. 
 
 Vamos, agora, considerar uma situação em que sabemos a quantidade de elementos do conjunto previamente. Por exemplo, poderíamos estar lidando com um problema envolvendo o conjunto Alfabeto = { A, B, C, ..., Z }. Sabemos que o alfabeto tem 26 letras e, portanto, basta um vetor de 26 posições.
 
