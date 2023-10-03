@@ -9,7 +9,15 @@ class IntPriorityQueue {
     /// @param e        O elemento a ser adicionado
     /// @param priority A prioridade do elemento
     void enqueue(int e, unsigned priority);
-
+      if (priorityQueue.size() != 0){
+        for(
+          std::vector<int>::iterator it = priorityQueue.end();
+          it != priorityQueue.begin(); 
+          --it){
+            //TODOOOOOO
+          }
+      }
+    
     /// @brief Remove o elemento de maior prioridade
     ///
     /// Remove o elemento de maior prioridade. Se a fila

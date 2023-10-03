@@ -2,7 +2,8 @@
 
 
 void IntPriorityQueue::enqueue(int e, unsigned priority){
-    IntPriorityQueue::priorityQueue.push_back()
+    IntPriorityQueue::dataType element(e, priority);
+    IntPriorityQueue::priorityQueue.push_back(element)
     return;
 }
 
