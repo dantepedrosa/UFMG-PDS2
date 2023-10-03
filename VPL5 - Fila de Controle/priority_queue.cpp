@@ -1,21 +1,22 @@
 #include "priority_queue.hpp"
 
-void enqueue(int e, unsigned priority){
-    //TODO Something
+
+void IntPriorityQueue::enqueue(int e, unsigned priority){
+    IntPriorityQueue::priorityQueue.push_back()
     return;
 }
 
-void dequeue(){
+void IntPriorityQueue::dequeue(){
     //TODO AEEE
     return;
 }
 
-int peek(){
+int IntPriorityQueue::peek(){
     //TODO AEEE
     return 0;
 }
 
-unsigned size(){
+unsigned IntPriorityQueue::size(){
     //TODO AEEE
     return 0;
 }
