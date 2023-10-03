@@ -1,8 +1,3 @@
-# Boas práticas
+# UFMG-PDS2
 
-## Nomeclatura
-
-- Struct/Classes: substantivo singular
-- Atributos: substantivo
-- Métodos: comando ou verbo infinitivo. Também `get_` e `set_`
-- 
+Repositório usado para publicar programas realizados na matéria de Programação e Desenvolvimento de Software da UFMG.
