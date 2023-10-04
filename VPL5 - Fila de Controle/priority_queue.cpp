@@ -2,8 +2,20 @@
 
 
 void IntPriorityQueue::enqueue(int e, unsigned priority){
+    
     IntPriorityQueue::dataType element(e, priority);
-    IntPriorityQueue::priorityQueue.push_back(element)
+    
+    if (priorityQueue.size() != 0){
+        for(
+            std::vector<dataType>::reverse_iterator it = IntPriorityQueue::priorityQueue.rbegin() ;
+            it != IntPriorityQueue::priorityQueue.rend(); 
+            ++it){
+            if ( *it. < element.second )
+          }
+    }
+    else
+        IntPriorityQueue::priorityQueue.push_back(element);
+
     return;
 }
 
