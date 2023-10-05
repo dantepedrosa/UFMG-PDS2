@@ -7,10 +7,17 @@ void IntPriorityQueue::enqueue(int e, unsigned priority){
     std::vector<dataType>::iterator it;
 
     if (this->priorityQueue.size() != 0){
-        for(it = this->priorityQueue.begin(); it < this->priorityQueue.end(); it++){
-            if ( it->second < element.second )
+        it = this->priorityQueue.begin();
+        while(it < this->priorityQueue.end()){
+            if ( element.second < it->second){
                 this->priorityQueue.insert(it, element);
-          }
+                break;
+            }
+            else
+                it++;
+        }
+        if(it == priorityQueue.end())
+            this->priorityQueue.push_back(element);
     }
     else
         this->priorityQueue.push_back(element);
