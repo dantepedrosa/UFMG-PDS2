@@ -6,10 +6,10 @@ void IntPriorityQueue::enqueue(int e, unsigned priority){
     IntPriorityQueue::dataType element(e, priority);
     std::vector<dataType>::iterator it;
 
-    if (priorityQueue.size() != 0){
-        for(it = priorityQueue.begin(); it < priorityQueue.end(); it++){
+    if (IntPriorityQueue::priorityQueue.size() != 0){
+        for(it = IntPriorityQueue::priorityQueue.begin(); it < IntPriorityQueue::priorityQueue.end(); it++){
             if ( it->second < element.second )
-                priorityQueue.insert(it, element);
+                IntPriorityQueue::priorityQueue.insert(it, element);
           }
     }
     else
@@ -19,15 +19,15 @@ void IntPriorityQueue::enqueue(int e, unsigned priority){
 }
 
 void IntPriorityQueue::dequeue(){
-    if (priorityQueue.size() != 0)
-        priorityQueue.pop_back();
+    if (IntPriorityQueue::priorityQueue.size() != 0)
+        IntPriorityQueue::priorityQueue.pop_back();
     return;
 }
 
 int IntPriorityQueue::peek(){
-    return priorityQueue.back().first;
+    return IntPriorityQueue::priorityQueue.back().first;
 }
 
 unsigned IntPriorityQueue::size(){
-    return priorityQueue.size();
+    return IntPriorityQueue::priorityQueue.size();
 }
