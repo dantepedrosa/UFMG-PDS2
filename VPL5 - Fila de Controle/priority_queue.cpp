@@ -19,16 +19,15 @@ void IntPriorityQueue::enqueue(int e, unsigned priority){
 }
 
 void IntPriorityQueue::dequeue(){
-    //TODO AEEE
+    if (priorityQueue.size() != 0)
+        priorityQueue.pop_back();
     return;
 }
 
 int IntPriorityQueue::peek(){
-    //TODO AEEE
-    return 0;
+    return priorityQueue.back().first;
 }
 
 unsigned IntPriorityQueue::size(){
-    //TODO AEEE
-    return 0;
+    return priorityQueue.size();
 }
