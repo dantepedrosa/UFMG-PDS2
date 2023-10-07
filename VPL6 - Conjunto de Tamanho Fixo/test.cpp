@@ -1,4 +1,4 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 
-#include "doctest.hpp"
+#include "doctest.h"
 #include "fixed_set.hpp"
