@@ -31,6 +31,20 @@ Set::Set(unsigned capacity) {
 	    << std::endl;
 }
 
+void Set::insert(unsigned x){
+  this->_data[x] = true;
+  return;
+}
+
+void Set::remove(unsigned x){
+  this->_data[x] = false;
+  return;
+}
+
+bool Set::contains(unsigned x){
+  return this->_data[x];
+}
+
 #else
 
 Set::Set(unsigned capacity) {
@@ -46,5 +60,42 @@ Set::Set(unsigned capacity) {
 	    << std::endl;
 }
 
+void Set::insert(unsigned x){
+
+  unsigned data_set = x / CHAR_BIT;
+  unsigned data_point = x % CHAR_BIT;
+  char pos = 0b10000000;
+  if(data_point > 1){
+    pos = pos >> data_point;
+  }
+  this->_data[data_set] = (this->_data[data_set] |  pos);
+  return;
+}
+
+void Set::remove(unsigned x){
+  unsigned data_set = x / CHAR_BIT;
+  unsigned data_point = x % CHAR_BIT;
+  char pos = 0b10000000;
+  if(data_point > 1){
+    pos = pos >> data_point;
+  }
+  this->_data[data_set] = (this->_data[data_set] &  ~pos);
+  return;
+}
+
+bool Set::contains(unsigned x){
+
+  unsigned data_set = x / CHAR_BIT;
+  unsigned data_point = x % CHAR_BIT;
+  char pos = 0b10000000;
+  if(data_point > 1){
+    pos = pos >> data_point;
+  }
+  if (this->_data[data_set] &  pos)
+    return true;
+  else
+    return false;
+}
 
 #endif
+

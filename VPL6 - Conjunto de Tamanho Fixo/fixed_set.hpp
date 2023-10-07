@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 
 class Set {
 public:
@@ -46,9 +47,10 @@ private:
   //   MACROS #else e #endif
   // ==============================================================
 
+  std::vector<bool> 
+
 #if !defined(BIT_SET)
   bool *_data;
 #else
   char *_data;
 #endif
-};
