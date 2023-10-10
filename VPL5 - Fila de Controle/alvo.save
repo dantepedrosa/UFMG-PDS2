@@ -1,0 +1,3 @@
+alvo:
+	echo "Meu primeiro alvo"
+echo "Me	u segundo alvo"
