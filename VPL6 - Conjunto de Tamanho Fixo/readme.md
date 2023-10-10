@@ -36,3 +36,20 @@ Por exemplo, considere novamente o conjunto como sendo o Alfabeto = { A, B, C, D
 Note que foi preciso apenas um vetor de tamanho 4, cada posição ocupando 1 byte (8 bits), totalizando 8 * 4 = 32 bits. Em contrapartida, a implementação do exercício 1 gastaria 26 posições, cada uma de 1 byte, totalizando 26 * 8 = 208 bits.
 
 Para este segundo exercício, você deve implementar (no local adequado, leia as instruções nos arquivos!) o TAD Set da forma descrita acima (um vetor de chars, mapeando cada elemento para um bit).
+
+Teste falho:
+
+    Teste realizado:
+    ==========================
+    Set set(3);
+    set.insert(0);
+    set.insert(1);
+    set.insert(2);
+    REQUIRE(set.contains(0));
+    REQUIRE(set.contains(1));
+    REQUIRE(set.contains(2));
+    set.remove(2);
+    CHECK(set.contains(0));
+    CHECK(set.contains(1));
+    CHECK_FALSE(set.contains(2));
+    ==========================
