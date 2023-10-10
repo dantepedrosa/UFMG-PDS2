@@ -46,11 +46,10 @@ private:
   //   arranjo de chars, deve ser feita na região ENTRE AS
   //   MACROS #else e #endif
   // ==============================================================
-
-  std::vector<bool> 
-
 #if !defined(BIT_SET)
   bool *_data;
 #else
   char *_data;
 #endif
+
+};
