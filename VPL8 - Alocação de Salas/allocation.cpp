@@ -43,7 +43,7 @@ bool Allocation::operator<(Allocation const &other) const{
 }
 
 int Allocation::getPriority(vector<string> priorityList, string s){
-    for(int i=0; i<priorityList.size(); i++){
+    for(unsigned i=0; i<priorityList.size(); i++){
         if(s == priorityList[i])
             return i;
     }
