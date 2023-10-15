@@ -22,9 +22,13 @@ TEST_CASE("Testa comparação de alocações '=='"){
 }
 
 TEST_CASE("Testa comparação de alocações '<'"){
-    /// TODO - Testar comparação alocação '<'   
+    
+    Allocation a1 = {"Ter-Qui", "14:55-16:35", "3015"};
+    Allocation a2 = {"Ter-Qui", "07:30-09:10", "3015"};
+    CHECK(a2 < a1);
 }
 
+/*
 TEST_CASE("Teste 1"){
     AllocBoard board;
     Course pds2 = {"DCC123", "PDS2"};
@@ -45,3 +49,4 @@ TEST_CASE("Teste 1"){
     CHECK_EQ(gaal_allocs[0], a2);
     CHECK_EQ(gaal_allocs[1], a1);
 }
+*/

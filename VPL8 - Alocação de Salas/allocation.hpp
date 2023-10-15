@@ -30,12 +30,12 @@ public:
   bool operator<(Allocation const &other) const;
 
 private:
-  static vector<string> _dayPriotiry{
+  const vector<string> _dayPriotiry{
     "Seg-Qua", 
     "Ter-Qui", 
     "Sex"
   };
-  static vector<string> _hourPriority{
+  const vector<string> _hourPriority{
     "07:30-09:10",
     "09:25-11:05",
     "11:10-12:50",
