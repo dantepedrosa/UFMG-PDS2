@@ -29,5 +29,10 @@ bool AllocBoard::deallocate(string course_id, Allocation alloc){
 }
 
 vector<Allocation> AllocBoard::find_allocations(string course_id){
-    /// TODO - find_allocations method
+    vector<Allocation> course_allocations;
+    for(auto it = allocList.begin(); it!=allocList.end(); it++){
+        if(it->second.id == course_id)
+            course_allocations.push_back(it->first);
+    }
+    return course_allocations;
 }

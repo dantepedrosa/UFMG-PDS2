@@ -41,6 +41,18 @@ TEST_CASE("Testa alocações diferentes e iguais"){
     CHECK(board.allocate(gaal, a2));
 }
 
+TEST_CASE("Testa desalocação"){
+    AllocBoard board;
+    Course pds2 = {"DCC123", "PDS2"};
+    Allocation a0 = {"Ter-Qui", "14:55-16:35", "3040"};
+    REQUIRE(board.allocate(pds2, a0));
+    Course gaal = {"MAT111", "GAAL"};
+    Allocation a1 = {"Ter-Qui", "07:30-09:10", "3015"};
+    REQUIRE(board.allocate(gaal, a1));
+    CHECK_FALSE(board.deallocate(pds2.id, a1));
+    CHECK(board.deallocate(gaal.id, a1));
+}
+
 /*
 TEST_CASE("Teste 1"){
     AllocBoard board;
