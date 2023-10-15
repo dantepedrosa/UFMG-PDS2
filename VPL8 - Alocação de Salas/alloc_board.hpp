@@ -5,6 +5,7 @@
 
 #include <string>
 #include <vector>
+#include <map>
 
 class AllocBoard {
 public:
@@ -28,4 +29,6 @@ public:
   std::vector<Allocation> find_allocations(std::string course_id);
 
 private:
+
+  std::map<Allocation, Course> allocList; 
 };
