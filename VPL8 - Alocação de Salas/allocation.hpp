@@ -1,20 +1,21 @@
 #pragma once
 
 #include <string>
-#include <map>
+#include <vector>
+using namespace std;
 
 class Allocation {
 public:
 
-  std::string day;
-  std::string hour;
-  std::string room;
+  string day;
+  string hour;
+  string room;
 
   /// @brief Contrutor da classe Alocação
   /// @param day dia da alocação
   /// @param hour hora da alocação
   /// @param room sala da alocação
-  Allocation(std::string day, std::string hour, std::string room);
+  Allocation(string day, string hour, string room);
 
   /// @brief Overload de operator == para a classe. 
   /// Compara se o dia, hora e sala são iguais. 
@@ -29,12 +30,12 @@ public:
   bool operator<(Allocation const &other) const;
 
 private:
-  std::vector<std::string> _dayPriotiry{
+  static vector<string> _dayPriotiry{
     "Seg-Qua", 
     "Ter-Qui", 
     "Sex"
   };
-  std::vector<std::string> _hourPriority{
+  static vector<string> _hourPriority{
     "07:30-09:10",
     "09:25-11:05",
     "11:10-12:50",
@@ -42,4 +43,6 @@ private:
     "14:55-16:35",
     "17:00-18:40"
   };
+
+  static int getPriority(vector<string> priorityList, string s);
 };

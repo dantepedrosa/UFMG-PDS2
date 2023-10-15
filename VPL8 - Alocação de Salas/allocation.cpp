@@ -1,6 +1,7 @@
 #include "allocation.hpp"
+using namespace std;
 
-Allocation::Allocation(std::string day, std::string hour, std::string room){
+Allocation::Allocation(string day, string hour, string room){
     this->day = day;
     this->hour = hour;
     this->room = room;
@@ -19,20 +20,32 @@ bool Allocation::operator==(Allocation const &other) const{
 
 bool Allocation::operator<(Allocation const &other) const{
 
+    int _thisPriority = getPriority(_dayPriotiry, this->day);
+    int _otherPriority = getPriority(_dayPriotiry, other.day);
     // Confere se o dia é menor
-    if (this->day < other.day)
+    if (_thisPriority < _otherPriority)
         return true;
     // Se o dia for igual, 
-    else if (this->day == other.day) { 
+    else if (_thisPriority == _otherPriority) { 
+        _thisPriority = getPriority(_hourPriority, this->hour);
+        _otherPriority = getPriority(_hourPriority, other.hour);
         //... confere se a hora é menor. 
-        if (this->hour < other.hour)
+        if (_thisPriority < _otherPriority)
             return true;
         // Se a hora for igual,
-        else if (this->hour == other.hour){
+        else if (_thisPriority == _otherPriority){
             // ... confere se o quarto é menor.
-            if (this->room < other.room)
+            if (stoi(this->room) < stoi(other.room))
                 return true;
         }
     }
     return false; 
+}
+
+int Allocation::getPriority(vector<string> priorityList, string s){
+    for(int i=0; i<priorityList.size(); i++){
+        if(s == priorityList[i])
+            return i;
+    }
+    return 99999;
 }
