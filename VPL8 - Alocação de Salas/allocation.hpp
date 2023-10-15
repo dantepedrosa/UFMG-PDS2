@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <map>
 
 class Allocation {
 public:
@@ -26,4 +27,19 @@ public:
   /// @param other classe a ser comparada a atual
   /// @return true se tanto o dia, horário e sala são menores
   bool operator<(Allocation const &other) const;
+
+private:
+  std::vector<std::string> _dayPriotiry{
+    "Seg-Qua", 
+    "Ter-Qui", 
+    "Sex"
+  };
+  std::vector<std::string> _hourPriority{
+    "07:30-09:10",
+    "09:25-11:05",
+    "11:10-12:50",
+    "13:00-14:40",
+    "14:55-16:35",
+    "17:00-18:40"
+  };
 };
