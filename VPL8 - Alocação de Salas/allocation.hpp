@@ -4,9 +4,16 @@
 
 class Allocation {
 public:
+
   std::string day;
   std::string hour;
   std::string room;
+
+  /// @brief Contrutor da classe Alocação
+  /// @param day dia da alocação
+  /// @param hour hora da alocação
+  /// @param room sala da alocação
+  Allocation(std::string day, std::string hour, std::string room);
 
   /// @brief Overload de operator == para a classe. 
   /// Compara se o dia, hora e sala são iguais. 
