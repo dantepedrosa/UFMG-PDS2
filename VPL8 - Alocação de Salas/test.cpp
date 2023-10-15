@@ -20,3 +20,15 @@ TEST_CASE("Testa comparação de dois cursos com nomes e codigos diferentes"){
     CHECK_FALSE(c1 == c2);
     CHECK(c2 == c3);
 }
+
+TEST_CASE("Testa comparação de alocações '=='"){
+    Allocation a1("Segunda", "13:00", "208");
+    Allocation a2("Segunda", "14:40", "208");
+    Allocation a3("Segunda", "14:40", "208");
+    CHECK_FALSE(a1 == a2);
+    CHECK(a2 == a3);
+}
+
+TEST_CASE("Testa comparação de alocações '<'"){
+    /// TODO - Teste comparação alocações '<' 
+}
