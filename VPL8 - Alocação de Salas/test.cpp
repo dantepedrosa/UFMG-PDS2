@@ -53,8 +53,7 @@ TEST_CASE("Testa desalocação"){
     CHECK(board.deallocate(gaal.id, a1));
 }
 
-/*
-TEST_CASE("Teste 1"){
+TEST_CASE("Teste final completo"){
     AllocBoard board;
     Course pds2 = {"DCC123", "PDS2"};
     Allocation a0 = {"Ter-Qui", "14:55-16:35", "3040"};
@@ -65,13 +64,12 @@ TEST_CASE("Teste 1"){
     CHECK(board.allocate(gaal, a1));
     CHECK(board.allocate(gaal, a2));
 
-    std::vector<Allocation> pds2_allocs = board.find_allocations(pds2.id);
+    auto pds2_allocs = board.find_allocations(pds2.id);
     CHECK_EQ(pds2_allocs.size(), 1);
     CHECK_EQ(pds2_allocs[0], a0);
 
-    std::vector<Allocation> gaal_allocs = board.find_allocations(gaal.id);
+    auto gaal_allocs = board.find_allocations(gaal.id);
     CHECK_EQ(gaal_allocs.size(), 2);
     CHECK_EQ(gaal_allocs[0], a2);
     CHECK_EQ(gaal_allocs[1], a1);
 }
-*/
