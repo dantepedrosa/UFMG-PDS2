@@ -6,19 +6,26 @@ using namespace std;
 
 bool AllocBoard::allocate(Course course, Allocation alloc){
     auto it = allocList.find(alloc);    // Confere se já existe a alocação
-    if (it != allocList.end()){
+    if (it == allocList.end()){
         // Caso não exista, insere, preservando a ordem
         auto it = allocList.upper_bound(alloc); //1
         allocList.insert(it, pair<Allocation,Course>(alloc,course));
         return true;
     }
-    else
-        // Caso existe, retorna false
-        return false;
+    // Caso existe, retorna false
+    return false;
 }
 
 bool AllocBoard::deallocate(string course_id, Allocation alloc){
-    /// TODO - deallocate method
+    auto it = allocList.find(alloc);    // Confere se já existe a alocação
+    if (it != allocList.end()){
+        // Caso exista e curso_id coincidem
+        if (it->second.id == course_id){
+            allocList.erase(it);
+            return true;
+        }
+    }
+    return false;
 }
 
 vector<Allocation> AllocBoard::find_allocations(string course_id){

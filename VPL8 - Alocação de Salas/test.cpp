@@ -28,6 +28,19 @@ TEST_CASE("Testa comparação de alocações '<'"){
     CHECK(a2 < a1);
 }
 
+
+TEST_CASE("Testa alocações diferentes e iguais"){
+    AllocBoard board;
+    Course pds2 = {"DCC123", "PDS2"};
+    Allocation a0 = {"Ter-Qui", "14:55-16:35", "3040"};
+    CHECK(board.allocate(pds2, a0));
+    Course gaal = {"MAT111", "GAAL"};
+    Allocation a1 = {"Ter-Qui", "14:55-16:35", "3040"};
+    Allocation a2 = {"Ter-Qui", "07:30-09:10", "3015"};
+    CHECK_FALSE(board.allocate(gaal, a1));
+    CHECK(board.allocate(gaal, a2));
+}
+
 /*
 TEST_CASE("Teste 1"){
     AllocBoard board;
