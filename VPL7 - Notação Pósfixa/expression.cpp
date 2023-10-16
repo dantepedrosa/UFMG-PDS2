@@ -1,53 +1,58 @@
 #include "expression.hpp"
 #include <string>
+#include <iostream>
+using namespace std;
 
-Expression::Expression(std::string postfix){
+Expression::Expression(string postfix){
     this->postfixExpression = postfix;
 }
 
 float Expression::eval(){
 
-    std::string::size_type sz;   // alias of size_t
-    queue.push_back(std::stof(postfixExpression,&sz));
+    string::size_type sz;   // alias of size_t
+    queue.push_back(stof(postfixExpression,&sz));
+    cout << queue.back() << endl;
+    string rest = postfixExpression.substr(sz);
+    rest.erase(0,1);
 
-    std::string str;
-    for(auto x : postfixExpression.substr(sz)){
-        if(x == ' '){
-            if(str == "+"){
+    for(auto x : rest){
+        std::string it = "";
+        it.push_back(x); 
+        if(it == " ")
+            continue;
+        if(it == "+"){
+            float num2 = queue.back();
+            queue.pop_back();
+            float num1 = queue.back();
+            queue.pop_back();
+            queue.push_back(num1 + num2);
 
-                int num2 = queue.back();
-                queue.pop_back();
-                int num1 = queue.back();
-                queue.pop_back();
-                queue.push_back(num1 + num2);
+        } else if(it == "-"){
 
-            } else if(str == "-"){
+            float num2 = queue.back();
+            queue.pop_back();
+            float num1 = queue.back();
+            queue.pop_back();
+            queue.push_back(num1 - num2);
 
-                int num2 = queue.back();
-                queue.pop_back();
-                int num1 = queue.back();
-                queue.pop_back();
-                queue.push_back(num1 - num2);
+        } else if(it == "*"){
 
-            } else if(str == "*"){
+            float num2 = queue.back();
+            queue.pop_back();
+            float num1 = queue.back();
+            queue.pop_back();
+            queue.push_back(num1 * num2);
 
-                int num2 = queue.back();
-                queue.pop_back();
-                int num1 = queue.back();
-                queue.pop_back();
-                queue.push_back(num1 * num2);
+        } else if(it == "/"){
 
-            } else if(str == "/"){
+            float num2 = queue.back();
+            queue.pop_back();
+            float num1 = queue.back();
+            queue.pop_back();
+            queue.push_back(num1 / num2);
 
-                int num2 = queue.back();
-                queue.pop_back();
-                int num1 = queue.back();
-                queue.pop_back();
-                queue.push_back(num1 / num2);
-
-            } else
-                queue.push_back(stof(str));
-        }
+        } else
+            queue.push_back(stof(it));
     }
     return queue.front();
 }
