@@ -1,4 +1,4 @@
-![Alt text](image.png)
+![Alt text](media/logo.png)
 
 # Histórias de Usuário e Cartões CRC
 
@@ -28,6 +28,20 @@ Para criar o software Youtube, foram captadas 3 (três) histórias de usuários 
 2. Saber inscritos no vídeo
 3. Saber momentos de curtida/descurtida
 
-### Carla Mendes - Gerente de Marketing de empresa grande
+### Carla Mendes - Produtora musical
 
-> Eu, como gerente de marketing, quero poder acompanhar quantos seguidores os criadores de conteúdo tem, e saber quanto seus vídeos prendem os usuários para poder escolher melhor com quem fazer parcerias de anúncios.
+> Eu, como produtora musical, quero poder fazer parcerias com criadores de conteúdo, compor musicas para vídeos e ter meus direitos autorais protegidos, para impedir de ser tocado em vídeos sem que haja divisão da receita dos vídeos.
+
+**Critérios de Aceitação**
+
+1. Dividir receita entre múltiplos criadores
+2. Identificar músicas tocadas no vídeo
+3. Acessar banco de arquivos protegidos por direitos autorais.
+
+## Modelagem - Cartões CRC
+
+![ClasseVideo](media/Video.png)
+
+![ClasseUsuario](media/Usuario.png)
+
+![Alt text](media/CriadorDeConteudo.png)
